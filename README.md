@@ -1,6 +1,6 @@
 # Description
 
-> 是基于黑马程序员vue教程开发出的vue移动端小程序
+> 使用vue.js开发的移动端程序
 
 ## Build Setup
 
@@ -27,7 +27,7 @@ npm run e2e
 npm test
 ```
 
-##如何上传修改的代码？
-1、git add .
-2、git commit  -m "提交信息"
-3、git push
+## 如何上传修改的代码？
+> 1、git add .
+> 2、git commit  -m "提交信息"
+> 3、git push
