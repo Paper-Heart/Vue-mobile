@@ -11,11 +11,19 @@ import "./lib/mui/css/mui.min.css"
 import "./lib/mui/css/icons-extra.css"
 //导入axios
 import axios from "axios"
+//导入moment
+import moment from "moment"
+
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios;
 
 Vue.use(MintUI)
 /* eslint-disable no-new */
+
+Vue.filter("dateFormat", function(dateStr,patten="YYYY-MM-DD HH:mm:ss"){
+  return moment(dateStr).format(patten)
+})
+
 new Vue({
   el: '#app',
   router,
