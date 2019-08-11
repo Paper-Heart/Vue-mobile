@@ -13,11 +13,18 @@ import "./lib/mui/css/icons-extra.css"
 import axios from "axios"
 //导入moment
 import moment from "moment"
+// 引入vant
+import Vant from 'vant'
+import "../node_modules/vant/lib/index.css"
+import VuePreview from "vue-preview"
+
+Vue.use(Vant)
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios;
 
 Vue.use(MintUI)
+Vue.use(VuePreview)
 /* eslint-disable no-new */
 
 Vue.filter("dateFormat", function(dateStr,patten="YYYY-MM-DD HH:mm:ss"){
