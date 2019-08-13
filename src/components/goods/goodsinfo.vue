@@ -24,10 +24,10 @@
           </p>
           <p class="goods-num">
             购买数量:
-            <van-stepper v-model="value" input-width="51px" button-size="32px" :max="goodsinfo.stock_quantity"/>
+            <van-stepper v-model="value" input-width="55px" button-size="32px" :max="goodsinfo.stock_quantity"/>
           </p>
           <p>
-            <mt-button type="primary" size="small">立即购买</mt-button>
+            <mt-button type="primary" size="small" @click="todo">立即购买</mt-button>
             <mt-button type="danger" size="small" @click="addToShopCar">加入购物车</mt-button>
           </p>
         </div>
@@ -52,6 +52,7 @@
 </template>
 <script>
 import swiper from "../subcomponents/swiper.vue";
+import { Toast } from "mint-ui";
 export default {
   data() {
     return {
@@ -99,6 +100,9 @@ export default {
     addToShopCar() {
       //添加到购物车
       this.ballFlag = !this.ballFlag;
+      //存储 商品的信息
+      const goodsinfo={id:this.id,count:this.value,price:this.goodsinfo.sell_price,selected:true};
+      this.$store.commit("addToCar",goodsinfo)
     },
     beforeEnter(el) {
       el.style.transform = "translate(0,0)";
@@ -120,6 +124,9 @@ export default {
     },
     afterEnter(el) {
       this.ballFlag = !this.ballFlag;
+    },
+    todo(){
+      Toast("尚未开发");
     }
   },
   components: {
@@ -137,8 +144,8 @@ export default {
   font-size: 16px;
   font-weight: bold;
 }
-.van-stepper input {
-  margin-bottom: 0;
+.van-stepper .van-stepper__input{
+  margin-bottom: 0px;
 }
 .mui-card-footer {
   display: block;

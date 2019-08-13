@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="photolist-container">
     <van-tabs>
       <van-tab v-for="item in cates" :key="item.id">
         <!-- :title="item.title" @click.native="getPhotoListByCateId(item.id+3)" -->
@@ -86,7 +86,7 @@ export default {
   width: 100%;
   vertical-align: middle;
 }
-.info {
+.photolist-container .info {
   color: #ffffff;
   text-align: left;
   position: absolute;
@@ -95,11 +95,11 @@ export default {
   max-height: 84px;
   text-decoration: none;
 }
-.info .info-title {
+.photolist-container .info .info-title {
   font-size: 14px;
   text-decoration: none;
 }
-.info .info-body {
+.photolist-container .info .info-body {
   font-size: 13px;
 }
 </style>

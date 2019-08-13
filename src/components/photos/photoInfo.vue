@@ -71,7 +71,7 @@ export default {
   }
 };
 </script>
-<style scroped>
+<style>
 .photoinfo-container {
   padding: 3px;
 }
