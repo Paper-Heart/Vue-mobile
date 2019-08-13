@@ -62,7 +62,6 @@ export default {
           });
           //把完整的数据存入list中
             this.list = res.data.message;
-            console.log(this.list)
         }
       });
     }
@@ -91,7 +90,17 @@ export default {
   font-size: 13px;
   line-height: 28px;
 }
-.thumbs{
+.thumbs figure{
+    padding: 8px;
+    margin: 0;
+}
+.thumbs .my-gallery{
     display: flex;
+    flex-wrap:wrap;
+    justify-content: flex-start;
+}
+.thumbs img{
+    width: 73px;
+    height: 73px;
 }
 </style>
